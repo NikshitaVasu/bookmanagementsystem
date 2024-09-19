@@ -19,7 +19,7 @@ app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Serve PDF files from your specified directory
-app.use('/pdfs', express.static('C:/Users/Siddhik Kumar/Desktop/Rospl/bookmanagementsystem-main/server/uploads'));
+app.use('/pdfs', express.static('C:/Users/Desktop/Rospl/bookmanagementsystem-main/server/uploads'));
 
 // Routes
 app.use('/books', require('./routes/api/books'));
