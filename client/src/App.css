@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
   box-sizing: border-box;
   padding: 0;
@@ -71,3 +72,15 @@ body.dark-mode .navbar-menu_container {
 .dark-mode .navbar-menu_container-links p a {
   color: #ffffff;
 }
+=======
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+>>>>>>> a16c129e84ced801d680ab3b52a17d3d3bc7123e

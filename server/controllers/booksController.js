@@ -2,8 +2,6 @@ const fsPromises = require('fs').promises;
 const path = require('path');
 const multer = require('multer');
 
-
-
 // Custom storage configuration for multer
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -11,7 +9,7 @@ const storage = multer.diskStorage({
     cb(null, path.join(__dirname, '..', 'uploads')); // Correct path without extra space
   },
   filename: function (req, file, cb) {
-    console.log(' function called');
+    console.log('Filename function called');
     cb(null, Date.now() + path.extname(file.originalname));
   }
 });
@@ -41,7 +39,7 @@ const getBook = (req, res) => {
 
 // Create a new book
 const createNewBook = async (req, res) => {
-  const { title, author, no_of_pages, published_at, genre, pdf, reading_status } = req.body;
+  const { title, author, no_of_pages, published_at, genre, reading_status } = req.body;
 
   // Validate required fields
   if (!title || !author || !no_of_pages || !published_at || !genre) {
@@ -56,14 +54,11 @@ const createNewBook = async (req, res) => {
     no_of_pages: parseInt(no_of_pages),
     published_at,
     genre,
-   
     reading_status: reading_status || 'Not available' // Handle reading_status
   };
 
-
-
-   // Handle PDF update
-   if (req.file) {
+  // Handle PDF update
+  if (req.file) {
     newBook.pdf = req.file.filename; // Update to use the file name
   }
 
@@ -80,7 +75,6 @@ const createNewBook = async (req, res) => {
     res.status(500).json({ message: 'Internal Server Error' });
   }
 };
-
 
 // Update a book
 const updateBook = async (req, res) => {
@@ -106,8 +100,6 @@ const updateBook = async (req, res) => {
   if (req.file) {
     updatedBook.pdf = req.file.filename; // Update to use the file name
   }
-
-  console.log(req.file,'req update')
 
   try {
     data.setBooks(data.books.map((bk) => (bk.id === parseInt(id) ? updatedBook : bk)));

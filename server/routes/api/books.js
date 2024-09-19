@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const express = require('express');
 const router = express.Router();
 const booksController = require('../../controllers/booksController');
@@ -19,3 +20,19 @@ router.route('/addBook').post(upload.single('pdf'), booksController.createNewBoo
 router.route('/editBook/:id').put(upload.single('pdf'), booksController.updateBook);
 
 module.exports = router;
+=======
+const express = require('express');
+const router = express.Router();
+const booksController = require('../../controllers/booksController');
+
+router.route('/').get(booksController.getAllBooks);
+
+router.route('/:id').delete(booksController.deleteBook);
+
+router.route('/addBook').post(booksController.createNewBook);
+
+router.route('/editBook/:id').put(booksController.updateBook);
+router.route('/editBook/:id').get(booksController.getBook);
+
+module.exports = router;
+>>>>>>> a16c129e84ced801d680ab3b52a17d3d3bc7123e
