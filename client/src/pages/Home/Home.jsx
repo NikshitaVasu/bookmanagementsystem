@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React from 'react';
 import hero from '../../assets/hero.jpg';
 import './home.css';

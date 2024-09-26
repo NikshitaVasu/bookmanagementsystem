@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React, { useState, useEffect } from "react";
 import { addBook } from "../../service/api";
 import "./addBook.css";

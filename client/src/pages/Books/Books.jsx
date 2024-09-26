@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React, { useState, useEffect } from "react";
 import { getBooks, deleteBook } from "../../service/api";
 import "./books.css";
